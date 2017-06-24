@@ -1,0 +1,21 @@
+  <div class="row">
+      <% @products.each do |p| %>
+        <div class="col-sm-12 col-md-4 card-product">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3><%= p.title %></h3>
+              <p><%= p.briefing %></p>
+              <p>R$: <%= p.price %></p>
+              <p>
+                <!-- O link esta direcionando para a pagina de informacoes
+                do produto, que criei agora pra voce (tem uma action no controller
+                chamada info e uma view chamada info.html.erb) -->
+                <a href="/products/info/<%= p.id %>" class="btn btn-primary" role="button">Detalhes</a>
+                <a href="/" class="btn btn-default" role="button"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
